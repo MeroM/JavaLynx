@@ -8,14 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Main  {
+public class Main {
     private static String staffFile = "data/staff.txt";
     private static String dateFormat = "dd.MM.yyyy";
 
     public static void main(String[] args) {
         ArrayList<Employee> staff = loadStaffFromFile();
-
-        /*Реализовать сортировку сотрудников по заработной плате и алфавиту одновременно.*/
         staff.sort((e1, e2) -> (e1.getSalary().equals(e2.getSalary())) ?
                 e1.getName().compareTo(e2.getName()) : e1.getSalary().compareTo(e2.getSalary()));
         staff.forEach(System.out::println);
